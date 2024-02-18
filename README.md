@@ -1,4 +1,4 @@
-Pics.io test task
+==Pics test task==
 
 §Tech stack: nodejs, mongodb, mongoose, express, jsonwebtoken, chai, mocha, supertest§
 
