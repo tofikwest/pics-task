@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  mongo_db:
+    container_name: mongodb_container
+    image: mongo:latest
+    restart: always
+    volumes:
+      - mongo_db:/data/db
+  server:
+    build: .
+    container_name: server_container
+    ports:
+      - "4000:4000"
+    volumes:
+      - "./:/app"
+      - "/app/node_modules"
+    environment:
+      JWT_SECRET: 4ef30bf14535b41f9c95f84bbac187f514af46f936f648a2528b98b20
+      PORT: 4000
+      MONGODB_URI: mongodb://mongo_db:27017
+      DB_NAME: picsTest
+      SERVER_MODE: production
+      AUTH_PRIVATE_KEY: test
+    depends_on:
+      - mongo_db
+volumes:
+  mongo_db: {}

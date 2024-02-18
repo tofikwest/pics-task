@@ -1,0 +1,29 @@
+{
+  "name": "testovoe",
+  "version": "1.0.0",
+  "description": "pics.io test task, Tofik Hasanov",
+  "main": "app.js",
+  "scripts": {
+    "dev": "cross-env SERVER_MODE=production && nodemon app.js",
+    "start:prod": "cross-env SERVER_MODE=production && node app.js",
+    "tests:start": "yarn install && cross-env SERVER_MODE=test && mocha --recursive __tests__/  --exit",
+    "docker:run": "yarn install && docker compose up"
+  },
+  "keywords": [],
+  "author": "Tofik_Hasanov <annexcies@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.4",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.1.2"
+  },
+  "devDependencies": {
+    "chai": "^5.1.0",
+    "cross-env": "^7.0.3",
+    "mocha": "^10.3.0",
+    "nodemon": "^3.0.3",
+    "supertest": "^6.3.4"
+  }
+}
