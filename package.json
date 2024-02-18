@@ -7,7 +7,8 @@
     "dev": "cross-env SERVER_MODE=production && nodemon app.js",
     "start:prod": "cross-env SERVER_MODE=production && node app.js",
     "tests:start": "yarn install && cross-env SERVER_MODE=test && mocha --recursive __tests__/  --exit",
-    "docker:run": "yarn install && docker compose up"
+    "docker:run": "yarn install && docker compose up",
+    "create:env": "cp .env.example.txt .env"
   },
   "keywords": [],
   "author": "Tofik_Hasanov <annexcies@gmail.com>",
